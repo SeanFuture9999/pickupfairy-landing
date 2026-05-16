@@ -14,9 +14,11 @@
 ```
 landing-page/
 ├── index.html          ← 主頁
-├── landing-v2.css      ← 主頁樣式
+├── styles.css          ← 主頁樣式
 ├── assets/
 │   └── images/
+│       ├── favicon-32.png      ← 瀏覽器分頁 icon
+│       ├── apple-touch-icon.png← iOS 加到主畫面 icon
 │       ├── hero-banner.jpg     ← 1024×500，主視覺
 │       ├── screenshot-1.jpg    ← 540×960，大廳介面
 │       ├── screenshot-2.jpg    ← 540×960，招魂變身
@@ -92,7 +94,7 @@ DNS 設定請參考 [GitHub Pages custom domain 文件](https://docs.github.com/
 ## 修改文案
 
 - **Slogan / 短介紹 / 特色 5 點** → `index.html` 內搜尋對應段落
-- **顏色** → `landing-v2.css` 內調整主頁樣式
+- **顏色** → `styles.css` 內調整主頁樣式
 - **法律文件** → 由獨立站點維護：
   - 隱私權政策：`https://seanfuture9999.github.io/nospoilers-legal/privacy-policy.html`
   - 服務條款：`https://seanfuture9999.github.io/nospoilers-legal/terms-of-service.html`
