@@ -15,9 +15,6 @@
 landing-page/
 ├── index.html          ← 主頁
 ├── landing-v2.css      ← 主頁樣式
-├── styles.css          ← 法律頁樣式
-├── privacy.html        ← 隱私政策（請依需求調整）
-├── terms.html          ← 服務條款（請依需求調整）
 ├── assets/
 │   └── images/
 │       ├── hero-banner.jpg     ← 1024×500，主視覺
@@ -95,8 +92,10 @@ DNS 設定請參考 [GitHub Pages custom domain 文件](https://docs.github.com/
 ## 修改文案
 
 - **Slogan / 短介紹 / 特色 5 點** → `index.html` 內搜尋對應段落
-- **顏色** → `styles.css` 最上方 `:root` 變數（紫 `--purple` / 金 `--gold`）
-- **新增分頁** → 複製 `privacy.html` 結構即可
+- **顏色** → `landing-v2.css` 內調整主頁樣式
+- **法律文件** → 由獨立站點維護：
+  - 隱私權政策：`https://seanfuture9999.github.io/nospoilers-legal/privacy-policy.html`
+  - 服務條款：`https://seanfuture9999.github.io/nospoilers-legal/terms-of-service.html`
 
 ---
 
