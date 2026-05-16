@@ -19,6 +19,10 @@
   <meta name="twitter:title" content="拾仙者｜休閒修仙遊戲">
   <meta name="twitter:description" content="拾仙者是一款節奏輕盈、氛圍沉浸的休閒修仙遊戲。觀看官方影片，立即從 Google Play 或 App Store 下載。">
   <meta name="twitter:image" content="https://seanfuture9999.github.io/pickupfairy-landing/assets/images/001.jpg">
+  <link rel="alternate" hreflang="zh-Hant" href="https://seanfuture9999.github.io/pickupfairy-landing/">
+  <link rel="alternate" hreflang="ja" href="https://seanfuture9999.github.io/pickupfairy-landing/ja/">
+  <link rel="alternate" hreflang="en" href="https://seanfuture9999.github.io/pickupfairy-landing/en/">
+  <link rel="alternate" hreflang="x-default" href="https://seanfuture9999.github.io/pickupfairy-landing/">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32.png">
   <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
   <link rel="preload" as="image" href="assets/images/hero-banner.jpg">
@@ -35,7 +39,14 @@
         <span class="sigil" aria-hidden="true"></span>
         <span>NoSpoilers</span>
       </div>
-      <span class="nav-kicker">修仙靈寵倖存者</span>
+      <div class="nav-tools">
+        <span class="nav-kicker">修仙靈寵倖存者</span>
+        <nav class="lang-switcher" aria-label="語言切換">
+          <a href="./" lang="zh-Hant" aria-current="page">繁中</a>
+          <a href="ja/" lang="ja">日本語</a>
+          <a href="en/" lang="en">EN</a>
+        </nav>
+      </div>
     </nav>
 
     <div class="hero-grid shell">
@@ -144,73 +155,6 @@
       <a href="https://www.threads.com/@mech_sanda" target="_blank" rel="noopener">Threads</a>
     </nav>
   </footer>
-  <script>
-    (function () {
-      const root = document.querySelector('[data-carousel]');
-      if (!root) return;
-      const slides = Array.from(root.querySelectorAll('.carousel-slide'));
-      const dots = Array.from(root.querySelectorAll('[data-carousel-dot]'));
-      const counter = root.querySelector('[data-carousel-counter]');
-      const prevBtn = root.querySelector('[data-carousel-prev]');
-      const nextBtn = root.querySelector('[data-carousel-next]');
-      const total = slides.length;
-      let current = 0;
-      let timer = null;
-      let userPaused = false;
-      const INTERVAL = 5000;
-
-      function isVideoSlide(idx) {
-        return slides[idx] && slides[idx].dataset.slideType === 'video';
-      }
-
-      function render() {
-        slides.forEach((s, i) => s.classList.toggle('is-active', i === current));
-        dots.forEach((d, i) => {
-          d.classList.toggle('is-active', i === current);
-          d.setAttribute('aria-selected', i === current ? 'true' : 'false');
-        });
-        if (counter) counter.textContent = (current + 1) + ' / ' + total;
-      }
-
-      function go(idx) {
-        current = (idx + total) % total;
-        render();
-        // 切到影片頁時暫停自動輪播
-        if (isVideoSlide(current)) stopAuto();
-      }
-
-      function next() { go(current + 1); }
-      function prev() { go(current - 1); }
-
-      function startAuto() {
-        if (userPaused) return;
-        if (isVideoSlide(current)) return;
-        stopAuto();
-        timer = setInterval(() => {
-          if (isVideoSlide(current)) { stopAuto(); return; }
-          go(current + 1);
-        }, INTERVAL);
-      }
-      function stopAuto() {
-        if (timer) { clearInterval(timer); timer = null; }
-      }
-      function userStop() {
-        userPaused = true;
-        stopAuto();
-      }
-
-      prevBtn && prevBtn.addEventListener('click', () => { userStop(); prev(); });
-      nextBtn && nextBtn.addEventListener('click', () => { userStop(); next(); });
-      dots.forEach((dot) => {
-        dot.addEventListener('click', () => {
-          userStop();
-          go(parseInt(dot.dataset.carouselDot, 10) || 0);
-        });
-      });
-
-      render();
-      startAuto();
-    })();
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>

@@ -14,6 +14,11 @@
 ```
 landing-page/
 ├── index.html          ← 主頁
+├── en/
+│   └── index.html      ← 英文頁
+├── ja/
+│   └── index.html      ← 日文頁
+├── script.js           ← 共用輪播互動
 ├── styles.css          ← 主頁樣式
 ├── assets/
 │   └── images/
@@ -82,6 +87,12 @@ cd landing-page && python -m http.server 3008
 4. 等 1-2 分鐘，網址會在 Settings → Pages 頂部出現：
    `https://seanfuture9999.github.io/pickupfairy-landing/`
 
+### 多語系網址
+
+- 繁體中文：`https://seanfuture9999.github.io/pickupfairy-landing/`
+- 日本語：`https://seanfuture9999.github.io/pickupfairy-landing/ja/`
+- English：`https://seanfuture9999.github.io/pickupfairy-landing/en/`
+
 ---
 
 ## 自訂網域（選用）
@@ -95,6 +106,7 @@ DNS 設定請參考 [GitHub Pages custom domain 文件](https://docs.github.com/
 
 - **Slogan / 短介紹 / 特色 5 點** → `index.html` 內搜尋對應段落
 - **顏色** → `styles.css` 內調整主頁樣式
+- **日文 / 英文文案** → 分別編輯 `ja/index.html` 與 `en/index.html`
 - **法律文件** → 由獨立站點維護：
   - 隱私權政策：`https://seanfuture9999.github.io/nospoilers-legal/privacy-policy.html`
   - 服務條款：`https://seanfuture9999.github.io/nospoilers-legal/terms-of-service.html`
